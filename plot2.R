@@ -1,0 +1,6 @@
+data <- read.table('household_power_consumption.txt', header=F, sep=';', na.strings='?', skip=66637, nrows=2880)
+x <- c(1:2880)
+png("plot2.png", width=480, height=480)
+plot(x, data$V3, type='l', ylab="Global Active Power (kilowatts)", xlab="", xaxt="n")
+axis(1, at=c(1,1440,2880), labels=c('Thu','Fri','Sat'))
+dev.off()
